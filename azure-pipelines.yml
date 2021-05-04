@@ -21,8 +21,9 @@ steps:
     targetDeployReleaseRepo: 'mvn-libs-release-local'
     targetDeploySnapshotRepo: 'mvn-libs-snapshot-local'
   
-- task: ArtifactoryPublishBuildInfo@1
+- task: ArtifactoryCollectIssues@1
   inputs:
     artifactoryService: 'art-test'
+    configSource: 'taskConfiguration'
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
