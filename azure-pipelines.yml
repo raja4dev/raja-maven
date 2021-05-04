@@ -21,6 +21,10 @@ steps:
     artifactoryDeployService: 'art-test'
     targetDeployReleaseRepo: 'mvn-libs-release-local'
     targetDeploySnapshotRepo: 'mvn-libs-snapshot-local'
+    collectBuildInfo: true
+    buildName: '$(Build.DefinitionName)'
+    buildNumber: '$(Build.BuildNumber)'
+    includeEnvVars: true
   
 - task: ArtifactoryCollectIssues@1
   inputs:
