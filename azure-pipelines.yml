@@ -26,12 +26,6 @@ steps:
     buildNumber: '$(Build.BuildNumber)'
     includeEnvVars: true
   
-- task: ArtifactoryCollectIssues@1
-  inputs:
-    artifactoryService: 'art-test'
-    configSource: 'taskConfiguration'
-    buildName: '$(Build.DefinitionName)'
-    buildNumber: '$(Build.BuildNumber)'
 - task: ArtifactoryPublishBuildInfo@1
   inputs:
     artifactoryService: 'art-test'
