@@ -27,3 +27,14 @@ steps:
     configSource: 'taskConfiguration'
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
+- task: ArtifactoryBuildPromotion@1
+  inputs:
+    artifactoryService: 'art-test'
+    buildName: '$(Build.DefinitionName)'
+    buildNumber: '$(Build.BuildNumber)'
+    targetRepo: 'mvn-libs-release-local'
+    status: 'Released'
+    sourceRepo: 'mvn-libs-snapshot-local'
+    includeDependencies: true
+    copy: true
+    dryRun: true
